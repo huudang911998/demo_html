@@ -990,7 +990,7 @@
                         axios.get('http://127.0.0.1:8000/api/markers').then(resp => {
                             resp.data.data.forEach(element => {
                                 var popup = new mapboxgl.Popup()
-				                .setHTML('<p style="color: #000">'+element.name+'</p>');
+				                .setHTML('<p style="color: #000">'+element.name+'</p><p style="color: #000">('+element.lng+'-'+element.lat+')</p>');
                                 new mapboxgl.Marker()
                                 .setLngLat([element.lng, element.lat])
                                 .setPopup(popup)
